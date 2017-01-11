@@ -1,0 +1,11 @@
+---
+buildpack: java_buildpack
+applications:
+- name: paas-poc
+  env:
+    SPRING_PROFILES_ACTIVE: test,cloud
+  memory: 512M
+  instances: 1  
+  path: target/PaaSPoc-0.0.1-SNAPSHOT.jar  
+  services:
+  - paas-poc-db
